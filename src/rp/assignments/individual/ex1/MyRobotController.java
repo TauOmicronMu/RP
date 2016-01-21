@@ -1,4 +1,4 @@
-
+package rp.assignments.individual.ex1;
 
 import rp.robotics.DifferentialDriveRobot;
 import rp.systems.StoppableRunnable;
@@ -12,13 +12,15 @@ import rp.systems.StoppableRunnable;
  */
 public class MyRobotController implements StoppableRunnable {
 
+	private DifferentialDriveRobot robot;
+	
 	public MyRobotController(DifferentialDriveRobot _robot) {
-
+		this.robot = _robot;
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		robot.getDifferentialPilot().forward();
 	}
 
 	@Override
