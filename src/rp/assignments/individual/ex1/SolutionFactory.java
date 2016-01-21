@@ -6,15 +6,15 @@ import rp.systems.StoppableRunnable;
 public class SolutionFactory {
     
     public static StoppableRunnable createEquilateralTriangleController(DifferentialDriveRobot _robot, Float _sideLength) {
-        return /**TODO : <code that creates a suitable controller object>**/
+        return ShapeDriverController(_robot, _sideLength, 3);
     }
-    
-    public static StoppableRunnable createSquareController( DifferentialDriveRobot _robot, Float _sideLength)(DifferentialDriveRobot _robot, Float _sideLength) {
-        return /**TODO : <code that creates a suitable controller object>**/
+
+	public static StoppableRunnable createSquareController( DifferentialDriveRobot _robot, Float _sideLength) {
+		return ShapeDriverController(_robot, _sideLength, 4);
     }
     
     public static StoppableRunnable createDecagonController(DifferentialDriveRobot _robot, Float _sideLength) {
-        return /**TODO : <code that creates a suitable controller object>**/
+        return ShapeDriverController(_robot, _sideLength, 10);
     }
 
 }
