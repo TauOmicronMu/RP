@@ -20,7 +20,7 @@ public class ShapeDriverController implements StoppableRunnable {
 		this.sideLength = _sideLength;
 		this.sideNumber = _sideNumber;
 		
-		this.interiorAngle = ((sideNumber - 2) * 180)/sideNumber;
+		this.interiorAngle = ((sideNumber - 2.0) * 180.0)/sideNumber;
 		
 	}
 
