@@ -6,7 +6,7 @@ import rp.assignments.individual.ex1.ShapeDriverController;
 
 public class SolutionFactory {
     
-    public static StoppableRunnable createEquilateralTriangleController(DifferentialDriveRobot _robot, Float _sideLength) {
+	public static StoppableRunnable createEquilateralTriangleController( DifferentialDriveRobot _robot, Float _sideLength) {
         return new ShapeDriverController(_robot, _sideLength, 3);
     }
 
@@ -14,7 +14,7 @@ public class SolutionFactory {
 		return new ShapeDriverController(_robot, _sideLength, 4);
     }
     
-    public static StoppableRunnable createDecagonController(DifferentialDriveRobot _robot, Float _sideLength) {
+	public static StoppableRunnable createDecagonController( DifferentialDriveRobot _robot, Float _sideLength) {
         return new ShapeDriverController(_robot, _sideLength, 10);
     }
 
