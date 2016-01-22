@@ -1,6 +1,7 @@
 package rp.assignments.individual.ex1;
 
 import lejos.robotics.navigation.DifferentialPilot;
+import lejos.util.Delay;
 import rp.robotics.DifferentialDriveRobot;
 import rp.robotics.TouchSensorEvent;
 import rp.robotics.TouchSensorListener;
@@ -8,7 +9,7 @@ import rp.systems.ControllerWithTouchSensor;
 import rp.systems.StoppableRunnable;
 import rp.util.Rate;
 
-public class BumperRobot implements ControllerWithTouchSensor{
+public class BumperRobot implements ControllerWithTouchSensor {
 
 	private final DifferentialDriveRobot robot;
 	private final DifferentialPilot pilot;
@@ -19,6 +20,8 @@ public class BumperRobot implements ControllerWithTouchSensor{
 		this.robot = _robot;
 		this.pilot = this.robot.getDifferentialPilot();
 		
+		this.pilot.setTravelSpeed(0.4);
+		
 		this.isRunning = false;
 		this.isBumped = false;	
 	}
@@ -26,25 +29,23 @@ public class BumperRobot implements ControllerWithTouchSensor{
 	@Override
 	public void run() {
 		isRunning = true;
-		
+		/*
+		if(isRunning) {
+		   this.pilot.travel(1.0, true);
+		}
+		*/
 		while(isRunning) {
-			//Move the pilot 1m forward.
 			this.pilot.travel(1.0, true);
-			
-			//Define a rate of 50ms
-			Rate rate = new Rate(50);
-			
-			//If the pilot is moving and bumped, sleep the pilot.
-			if(this.pilot.isMoving() && this.isBumped) {
-				rate.sleep();
-			}
+			Delay.msDelay(50);
 			
 			//If the pilot is bumped, reverse and spin.
 			if(this.isBumped) {
 				this.pilot.stop();
 				this.pilot.travel(-0.20, false);
 				this.pilot.rotate(180.0);
+				this.isBumped = false;
 			}
+			//this.run();	
 		}
 	}
 

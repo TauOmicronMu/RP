@@ -9,6 +9,8 @@ import rp.robotics.DifferentialDriveRobotPC;
 import rp.robotics.simulation.MapBasedSimulation;
 import rp.robotics.simulation.SimulatedRobots;
 import rp.robotics.testing.TestMaps;
+import rp.robotics.testing.TestViewer;
+import rp.robotics.testing.ZoneSequenceTestWithSim;
 import rp.robotics.visualisation.KillMeNow;
 import rp.robotics.visualisation.MapVisualisationComponent;
 import rp.systems.StoppableRunnable;
@@ -22,38 +24,7 @@ import rp.systems.StoppableRunnable;
  */
 public class Test {
 
-	public void run() {
-    /*
-		// Create the simulation using the given map. This simulation can run
-		// with a GUI.
-		MapBasedSimulation sim = new MapBasedSimulation(TestMaps.EMPTY_8_x_6);
-
-		// Add a robot of a given configuration to the simulation. The return
-		// value is the object you can use to control the robot.
-		//
-		// The dimensions of the simulated robot are defined in metres, thus all
-		// other parts of your code should use metres too.
-		DifferentialDriveRobotPC robot = sim.addRobot(
-				SimulatedRobots.EXPRESS_BOT_WITH_SENSORS, new Pose(0.5f, 0.5f,
-						0));
-
-		// This is the controller that actually makes the robot move
-		StoppableRunnable controller = SolutionFactory
-				.createEquilateralTriangleController(robot, 1.0f);
-
-
-		// Create visualisation JComponent that renders map, robots etc
-		MapVisualisationComponent viz = MapBasedSimulation
-				.createVisulation(sim);
-
-		// Add the visualisation to a JFrame to display it
-		displayVisualisation(viz);
-
-		// Start the controller running
-		controller.run();
-		
-	    */
-		
+	public void run() throws ClassNotFoundException {
 		org.junit.runner.Result result = JUnitCore
 				.runClasses(rp.assignments.individual.ex1.Ex1Tests.class);
 			System.out.println((result.getRunCount() - result.getFailureCount()) + "/" + (result.getRunCount()) + " tests successful");
@@ -79,9 +50,43 @@ public class Test {
 		return frame;
 	}
 
-	public static void main(String[] args) {
-		Test demo = new Test();
+	public static void main(String[] args) throws ClassNotFoundException {
+		//Run a Triangle Test
+		/*
+		Ex1Tests tests = new Ex1Tests();
+		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test = tests.createTriangleTest();
+		TestViewer demo = new TestViewer(test, test.getSimulation());
 		demo.run();
+		*/
+		 
+		
+		//Run a Square Test
+		/*
+		Ex1Tests tests2 = new Ex1Tests();
+		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test2 = tests2.createSquareTest();
+		TestViewer demo2 = new TestViewer(test2, test2.getSimulation());
+		demo2.run();
+		*/
+		
+		//Run a Decagon Test
+		/*
+		Ex1Tests tests3 = new Ex1Tests();
+		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test3 = tests3.createDecagonTest();
+		TestViewer demo3 = new TestViewer(test3, test3.getSimulation());
+		demo3.run();
+		*/
+		
+		//Run a Bumper Test
+		/*
+		Ex1Tests tests4 = new Ex1Tests();
+		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test4 = tests4.createBumperTest();
+		TestViewer demo4 = new TestViewer(test4, test4.getSimulation());
+		demo4.run();
+		*/
+		
+		Test test = new Test();
+		test.run();
+		
 	}
 
 }
