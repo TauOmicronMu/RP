@@ -1,6 +1,7 @@
 package rp.assignments.individual.ex1;
 
 import rp.robotics.DifferentialDriveRobot;
+import rp.systems.ControllerWithTouchSensor;
 import rp.systems.StoppableRunnable;
 import rp.assignments.individual.ex1.ShapeDriverController;
 
@@ -18,5 +19,8 @@ public class SolutionFactory {
         return new ShapeDriverController(_robot, _sideLength, 10);
     }
 
+	public static ControllerWithTouchSensor createBumperController(DifferentialDriveRobot _robot) {
+		return new BumperRobot(_robot);
+	}
 
 }
