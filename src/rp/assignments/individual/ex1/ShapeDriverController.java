@@ -13,22 +13,22 @@ public class ShapeDriverController implements StoppableRunnable {
 	private DifferentialDriveRobot robot;
     private Float sideLength;
     private int sideNumber;
-    private Double interiorAngle;
+    private Double angle;
 	
 	public ShapeDriverController(DifferentialDriveRobot _robot, Float _sideLength, int _sideNumber) {
 		this.robot = _robot;
 		this.sideLength = _sideLength;
 		this.sideNumber = _sideNumber;
 		
-		this.interiorAngle = ((sideNumber - 2.0) * 180.0)/sideNumber;
+		this.angle = 360.0/(double)sideNumber;
 		
 	}
 
 	@Override
 	public void run() {
 		for(int i = 0 ; i < sideNumber ; i++) {
-			this.robot.getDifferentialPilot().travel(1.0);
-			this.robot.getDifferentialPilot().rotate(this.interiorAngle);
+			this.robot.getDifferentialPilot().travel(this.sideLength);
+			this.robot.getDifferentialPilot().rotate(this.angle);
 		}
 	}
 
