@@ -1,9 +1,12 @@
 package rp.assignments.individual.ex1;
 
 import rp.robotics.DifferentialDriveRobot;
+import rp.robotics.EventBasedTouchSensor;
 import rp.systems.ControllerWithTouchSensor;
 import rp.systems.StoppableRunnable;
+import lejos.robotics.RangeFinder;
 import rp.assignments.individual.ex1.ShapeDriverController;
+import rp.config.RangeFinderDescription;
 
 public class SolutionFactory {
     
@@ -21,6 +24,10 @@ public class SolutionFactory {
 
 	public static ControllerWithTouchSensor createBumperController(DifferentialDriveRobot _robot) {
 		return new BumperRobot(_robot);
+	}
+	
+	public static EventBasedTouchSensor createVirtualBumper(RangeFinderDescription _desc, RangeFinder _ranger, Float _touchRange) {
+		return (EventBasedTouchSensor) new VBumper(_desc, _ranger, _touchRange);
 	}
 
 }

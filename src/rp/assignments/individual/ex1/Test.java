@@ -59,25 +59,25 @@ public class Test {
 		demo.run();
 		*/
 		 
-		
-		//Run a Square Test
 		/*
+		//Run a Square Test
+		
 		Ex1Tests tests2 = new Ex1Tests();
 		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test2 = tests2.createSquareTest();
 		TestViewer demo2 = new TestViewer(test2, test2.getSimulation());
 		demo2.run();
-		*/
+		
 		
 		//Run a Decagon Test
-		/*
+		
 		Ex1Tests tests3 = new Ex1Tests();
 		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test3 = tests3.createDecagonTest();
 		TestViewer demo3 = new TestViewer(test3, test3.getSimulation());
 		demo3.run();
-		*/
+		
 		
 		//Run a Bumper Test
-		/*
+		
 		Ex1Tests tests4 = new Ex1Tests();
 		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test4 = tests4.createBumperTest();
 		TestViewer demo4 = new TestViewer(test4, test4.getSimulation());
