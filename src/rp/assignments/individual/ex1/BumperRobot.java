@@ -36,7 +36,7 @@ public class BumperRobot implements ControllerWithTouchSensor {
 		*/
 		while(isRunning) {
 			this.pilot.travel(1.0, true);
-			Delay.msDelay(40);
+			Delay.msDelay(30);
 			
 			//If the pilot is bumped, reverse and spin.
 			if(this.isBumped) {

@@ -83,10 +83,18 @@ public class Test {
 		TestViewer demo4 = new TestViewer(test4, test4.getSimulation());
 		demo4.run();
 		*/
+		 
 		
 		Test test = new Test();
 		test.run();
 		
+		
+		/*
+		Ex1Tests tests4 = new Ex1Tests();
+		ZoneSequenceTestWithSim<DifferentialDriveRobotPC, ?> test4 = tests4.createVirtualBumperTest();
+		TestViewer demo4 = new TestViewer(test4, test4.getSimulation());
+		demo4.run();
+		*/
 	}
 
 }

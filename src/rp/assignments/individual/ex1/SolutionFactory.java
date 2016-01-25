@@ -20,14 +20,14 @@ public class SolutionFactory {
     
 	public static StoppableRunnable createDecagonController( DifferentialDriveRobot _robot, Float _sideLength) {
         return new ShapeDriverController(_robot, _sideLength, 10);
-    }
-
+    } 
+    
 	public static ControllerWithTouchSensor createBumperController(DifferentialDriveRobot _robot) {
 		return new BumperRobot(_robot);
-	}
+	} 
 	
 	public static EventBasedTouchSensor createVirtualBumper(RangeFinderDescription _desc, RangeFinder _ranger, Float _touchRange) {
-		return (EventBasedTouchSensor) new VBumper(_desc, _ranger, _touchRange);
+		return new VBumper(_desc, _ranger, _touchRange);
 	}
 
 }
