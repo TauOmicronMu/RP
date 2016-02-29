@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import org.junit.runner.JUnitCore;
 
 import lejos.robotics.navigation.Pose;
-import rp.robotics.DifferentialDriveRobotPC;
 import rp.robotics.simulation.MapBasedSimulation;
 import rp.robotics.simulation.SimulatedRobots;
 import rp.robotics.testing.TestMaps;
